@@ -168,18 +168,18 @@ Enter Name of Employee: Raj
 Enter ID of Employee: 327
 Enter Address of Employee: Villupuram
 Enter Mail ID of Employee: raj@gmail.com
-Enter Mobile Number of Employee: 9994191599
+Enter Mobile Number of Employee: 6375683926
 Enter Basic Pay: 15000
 1. Programmer
 2. Assistant Professor
 3. Associate Professor
 4. Professor
-Enter Designation: 2
+Enter Designation: 1
 
-***** ASSISTANT PROFESSOR PAYSLIP *****
+***** PROGRAMMER PAYSLIP *****
 Employee Name: Raj
 Employee ID: 327
 Address: Villupuram
-Mobile Number: 9994191599
+Mobile Number: 6375683926
 Gross Salary = 32865.0
 Net Salary = 31050.0
