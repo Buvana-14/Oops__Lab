@@ -34,10 +34,6 @@ public class FileDemo {
 
 OUTPUT
 
-Enter file name: Fibonacci.java
-File Name: Fibonacci.java
-Path: Fibonacci.java
-Absolute Path: C:\sameer\Fibonacci.java
 Parent: null
 This file is: Exists
 Is File: true
@@ -45,6 +41,6 @@ Is Directory: false
 Is Readable: true
 Is Writable: true
 Is Absolute: false
-File Last Modified: 1206324301937
-File Size: 406 bytes
+File Last Modified: 1791184509651
+File Size: 2294 bytes
 Is Hidden: false
