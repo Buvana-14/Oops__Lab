@@ -90,7 +90,7 @@ public class ArrayListExample {
     }
 }
 
-OUTPUT
+OUTPUT:
 
 Currently the array list obj1 has following elements:[Ajeet, Harry, Chaitanya, Steve, Anuj]
 ArrayList obj1 after add All:[Ajeet, Harry, Chaitanya, Steve, Anuj, Babu, Kamal, Alice, Bob, Raj]
