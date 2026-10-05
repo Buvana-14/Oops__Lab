@@ -51,11 +51,11 @@ public class EmployeeMain {
 
 Output :
 Enter Employee ID: 101
-Enter Employee Name: Keerthana
+Enter Employee Name: buvana
 Enter Basic Salary: 30000
 ----- Employee Details -----
 Employee ID   : 101
-Employee Name : Keerthana
+Employee Name : buvana
 Basic Salary  : 30000.0
 DA            : 12000.0
 HRA           : 6000.0
