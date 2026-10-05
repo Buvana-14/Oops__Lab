@@ -73,14 +73,14 @@ class Consumer {
 Output:
 
 Enter Consumer Number: 102
-Enter Consumer Name: Raghav
+Enter Consumer Name: raghev
 Enter Type of Connection (domestic/commercial): domestic
 Enter Previous Month Reading: 150
 Enter Current Month Reading: 800
 
 ----- Electricity Bill -----
 Consumer Number : 102
-Consumer Name   : Raghav
+Consumer Name   : raghev
 Connection Type : domestic
 Units Consumed  : 650.0
 Total Bill      : Rs. 3900.0
