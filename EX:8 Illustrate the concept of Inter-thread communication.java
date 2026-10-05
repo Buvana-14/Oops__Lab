@@ -1,0 +1,105 @@
+class SharedResource {
+    private int data;
+    private boolean available = false;
+
+    public synchronized void produce(int value) {
+        while (available) {
+            try {
+                wait();
+            }
+            catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        data = value;
+        System.out.println("Produced: " + data);
+
+        available = true;
+        notify();
+    }
+
+    public synchronized void consume() {
+        while (!available) {
+            try {
+                wait();
+            }
+            catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+        System.out.println("Consumed: " + data);
+
+        available = false;
+        notify();
+    }
+}
+
+class Producer implements Runnable {
+    private SharedResource resource;
+
+    Producer(SharedResource resource) {
+        this.resource = resource;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            resource.produce(i);
+
+            try {
+                Thread.sleep(100);
+            }
+            catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
+
+class Consumer implements Runnable {
+    private SharedResource resource;
+
+    Consumer(SharedResource resource) {
+        this.resource = resource;
+    }
+
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            resource.consume();
+
+            try {
+                Thread.sleep(100);
+            }
+            catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+}
+
+public class InterThreadCommunication {
+    public static void main(String[] args) {
+
+        SharedResource resource = new SharedResource();
+
+        Thread producer = new Thread(new Producer(resource));
+        Thread consumer = new Thread(new Consumer(resource));
+
+        producer.start();
+        consumer.start();
+    }
+}
+
+OUTPUT
+
+Produced: 1
+Consumed: 1
+Produced: 2
+Consumed: 2
+Produced: 3
+Consumed: 3
+Produced: 4
+Consumed: 4
+Produced: 5
+Consumed: 5
