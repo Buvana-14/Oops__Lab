@@ -77,25 +77,55 @@ public class Program5_StackException {
 }
 
 Output :
+
 1.Push
 2.Pop
 3.Display
 4.Exit
 Enter your choice: 1
-Enter value: 10
-10 pushed into stack.
+Enter value: 58
+58 pushed into stack.
 
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter your choice: 145
+Invalid Choice
+
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter your choice: 196
+Invalid Choice
+
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter your choice: 2
+58 popped from stack.
+
+1.Push
+2.Pop
+3.Display
+4.Exit
 Enter your choice: 1
-Enter value: 20
-20 pushed into stack.
+Enter value: 85
+85 pushed into stack.
 
+1.Push
+2.Pop
+3.Display
+4.Exit
 Enter your choice: 3
 Stack Elements:
-20
-10
+85
 
-Enter your choice: 2
-20 popped from stack.
-
+1.Push
+2.Pop
+3.Display
+4.Exit
 Enter your choice: 4
 Exiting...
