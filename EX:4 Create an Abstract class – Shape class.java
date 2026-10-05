@@ -51,10 +51,10 @@ public class Program4_Shape {
 }
 
 Output:
+
 Enter Length: 10
 Enter Breadth: 5
 Area of Rectangle = 50.0
-
 Enter Base: 8
 Enter Height: 6
 Area of Triangle = 24.0
