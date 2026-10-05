@@ -164,9 +164,18 @@ public class Main
 }
 
 OUTPUT:
-Enter the code 1:Currency\n2:Distance\n3:Time 1
-Enter the Currecy code 1:Euro\n2:Dollar\n3:Yen 2
-Enter amount in rupees 6600
-Dollar : 100
-Enter amount in Dollar 6
-Rupees : 396
+
+Enter the code
+1 : Currency
+2 : Distance
+3 : Time
+1
+Enter the Currency code
+1 : Euro
+2 : Dollar
+3 : Yen
+2
+Enter amount in Rupees: 6600
+Dollar : 100.0
+Enter amount in Dollar: 6
+Rupees : 396.0
