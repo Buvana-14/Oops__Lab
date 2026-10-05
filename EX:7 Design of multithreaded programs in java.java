@@ -1,0 +1,89 @@
+import java.util.Random;
+
+class Even implements Runnable {
+    int x;
+
+    Even(int x) {
+        this.x = x;
+    }
+
+    public void run() {
+        System.out.println(
+            "New Thread " + x +
+            " is EVEN and Square of " + x +
+            " is: " + (x * x)
+        );
+    }
+}
+
+class Odd implements Runnable {
+    int x;
+
+    Odd(int x) {
+        this.x = x;
+    }
+
+    public void run() {
+        System.out.println(
+            "New Thread " + x +
+            " is ODD and Cube of " + x +
+            " is: " + (x * x * x)
+        );
+    }
+}
+
+class NumberGenerator extends Thread {
+    public void run() {
+        Random random = new Random();
+
+        for (int i = 0; i < 5; i++) {
+            int num = random.nextInt(100);
+
+            System.out.println(
+                "Main Thread and Generated Number is " + num
+            );
+
+            if (num % 2 == 0) {
+                Thread t = new Thread(new Even(num));
+                t.start();
+            }
+            else {
+                Thread t = new Thread(new Odd(num));
+                t.start();
+            }
+
+            try {
+                Thread.sleep(1000);
+            }
+            catch (InterruptedException e) {
+                System.out.println("Thread interrupted");
+            }
+        }
+    }
+}
+
+public class ThreadProgram {
+    public static void main(String[] args) {
+        NumberGenerator thread = new NumberGenerator();
+        thread.start();
+    }
+}
+
+OUTPUT
+
+Main Thread and Generated Number is 10
+New Thread 10 is EVEN and Square of 10 is: 100
+
+Main Thread and Generated Number is 14
+New Thread 14 is EVEN and Square of 14 is: 196
+
+Main Thread and Generated Number is 83
+New Thread 83 is ODD and Cube of 83 is: 571787
+
+Main Thread and Generated Number is 1
+New Thread 1 is ODD and Cube of 1 is: 1
+
+Main Thread and Generated Number is 20
+New Thread 20 is EVEN and Square of 20 is: 400
+
+(Note: The generated numbers will change each time because Random is used.)
