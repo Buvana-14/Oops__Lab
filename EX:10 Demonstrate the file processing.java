@@ -1,0 +1,50 @@
+import java.io.File;
+import java.util.Scanner;
+
+public class FileDemo {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter file name: ");
+        String name = input.nextLine();
+
+        File file = new File(name);
+
+        System.out.println("File Name: " + file.getName());
+        System.out.println("Path: " + file.getPath());
+        System.out.println("Absolute Path: " + file.getAbsolutePath());
+        System.out.println("Parent: " + file.getParent());
+
+        System.out.println(
+            "This file is: " +
+            (file.exists() ? "Exists" : "Does not exist")
+        );
+
+        System.out.println("Is File: " + file.isFile());
+        System.out.println("Is Directory: " + file.isDirectory());
+        System.out.println("Is Readable: " + file.canRead());
+        System.out.println("Is Writable: " + file.canWrite());
+        System.out.println("Is Absolute: " + file.isAbsolute());
+        System.out.println("File Last Modified: " + file.lastModified());
+        System.out.println("File Size: " + file.length() + " bytes");
+        System.out.println("Is Hidden: " + file.isHidden());
+    }
+}
+
+OUTPUT
+
+Enter file name: Fibonacci.java
+File Name: Fibonacci.java
+Path: Fibonacci.java
+Absolute Path: C:\sameer\Fibonacci.java
+Parent: null
+This file is: Exists
+Is File: true
+Is Directory: false
+Is Readable: true
+Is Writable: true
+Is Absolute: false
+File Last Modified: 1206324301937
+File Size: 406 bytes
+Is Hidden: false
