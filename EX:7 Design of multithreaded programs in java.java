@@ -71,19 +71,13 @@ public class ThreadProgram {
 
 OUTPUT
 
-Main Thread and Generated Number is 10
-New Thread 10 is EVEN and Square of 10 is: 100
-
-Main Thread and Generated Number is 14
-New Thread 14 is EVEN and Square of 14 is: 196
-
-Main Thread and Generated Number is 83
-New Thread 83 is ODD and Cube of 83 is: 571787
-
-Main Thread and Generated Number is 1
-New Thread 1 is ODD and Cube of 1 is: 1
-
+Main Thread and Generated Number is 37
+New Thread 37 is ODD and Cube of 37 is: 50653
+Main Thread and Generated Number is 47
+New Thread 47 is ODD and Cube of 47 is: 103823
 Main Thread and Generated Number is 20
 New Thread 20 is EVEN and Square of 20 is: 400
-
-(Note: The generated numbers will change each time because Random is used.)
+Main Thread and Generated Number is 45
+New Thread 45 is ODD and Cube of 45 is: 91125
+Main Thread and Generated Number is 47
+New Thread 47 is ODD and Cube of 47 is: 103823
