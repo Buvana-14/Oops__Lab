@@ -1,0 +1,111 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class ArrayListExample {
+    public static void main(String[] args) {
+
+        ArrayList<String> obj1 = new ArrayList<>();
+
+        obj1.add("Ajeet");
+        obj1.add("Harry");
+        obj1.add("Chaitanya");
+        obj1.add("Steve");
+        obj1.add("Anuj");
+
+        System.out.println(
+            "Currently the array list obj1 has following elements:" + obj1
+        );
+
+        obj1.add("Babu");
+        obj1.add("Kamal");
+
+        ArrayList<String> obj2 = new ArrayList<>();
+
+        obj2.add("Alice");
+        obj2.add("Bob");
+        obj2.add("Raj");
+
+        obj1.addAll(obj2);
+
+        System.out.println(
+            "ArrayList obj1 after add All:" + obj1
+        );
+
+        obj1.add(0, "Rahul");
+        obj1.add(1, "Justin");
+
+        System.out.println(
+            "ArrayList obj1 after add element at the given index:" + obj1
+        );
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the Search element: ");
+        String search = input.nextLine();
+
+        System.out.println(
+            "ArrayList obj1 contains the string " +
+            search + " :" + obj1.contains(search)
+        );
+
+        obj1.remove("Chaitanya");
+        obj1.remove("Harry");
+
+        System.out.println(
+            "Current array list of obj1 after removing element is:" + obj1
+        );
+
+        obj1.remove(1);
+
+        System.out.println(
+            "Current array list of obj1 after removing element through index is:" + obj1
+        );
+
+        System.out.print(
+            "Enter the letter to display all the string start with given letter: "
+        );
+
+        search = input.nextLine().toUpperCase();
+
+        ArrayList<String> obj3 = new ArrayList<>();
+
+        for (String name : obj1) {
+            if (name.toUpperCase().startsWith(search)) {
+                obj3.add(name);
+            }
+        }
+
+        if (!obj3.isEmpty()) {
+            System.out.println(
+                "ArrayList obj1 contains all the string start with given " +
+                search + ":" + obj3
+            );
+        }
+        else {
+            System.out.println(
+                "No Name start with " + search +
+                " letter in ArrayList obj1"
+            );
+        }
+    }
+}
+
+OUTPUT
+
+Currently the array list obj1 has following elements:[Ajeet, Harry, Chaitanya, Steve, Anuj]
+
+ArrayList obj1 after add All:[Ajeet, Harry, Chaitanya, Steve, Anuj, Babu, Kamal, Alice, Bob, Raj]
+
+ArrayList obj1 after add element at the given index:[Rahul, Justin, Ajeet, Harry, Chaitanya, Steve, Anuj, Babu, Kamal, Alice, Bob, Raj]
+
+Enter the Search element: Babu
+
+ArrayList obj1 contains the string Babu :true
+
+Current array list of obj1 after removing element is:[Rahul, Justin, Ajeet, Steve, Anuj, Babu, Kamal, Alice, Bob, Raj]
+
+Current array list of obj1 after removing element through index is:[Rahul, Ajeet, Steve, Anuj, Babu, Kamal, Alice, Bob, Raj]
+
+Enter the letter to display all the string start with given letter: R
+
+ArrayList obj1 contains all the string start with given R:[Rahul, Raj]
