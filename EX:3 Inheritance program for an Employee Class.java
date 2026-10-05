@@ -1,64 +1,185 @@
 import java.util.Scanner;
+
 class Employee {
-    int empId;
-    String empName;
-    double basicSalary;
-    void getEmployeeDetails() {
+    String name, address, mail, mobile;
+    int id;
+
+    Employee(String name, int id, String address, String mail, String mobile) {
+        this.name = name;
+        this.id = id;
+        this.address = address;
+        this.mail = mail;
+        this.mobile = mobile;
+    }
+
+    void display() {
+        System.out.println("Employee Name: " + name);
+        System.out.println("Employee ID: " + id);
+        System.out.println("Address: " + address);
+        System.out.println("Mobile Number: " + mobile);
+    }
+}
+
+class Programmer extends Employee {
+    double bp;
+
+    Programmer(String n, int id, String a, String m, String mob, double bp) {
+        super(n, id, a, m, mob);
+        this.bp = bp;
+    }
+
+    void paySlip() {
+        double da = bp * 0.97;
+        double hra = bp * 0.10;
+        double pf = bp * 0.12;
+        double fund = bp * 0.001;
+        double gross = bp + da + hra + pf + fund;
+        double net = gross - pf - fund;
+
+        System.out.println("\n***** PROGRAMMER PAYSLIP *****");
+        display();
+        System.out.println("Gross Salary = " + gross);
+        System.out.println("Net Salary = " + net);
+    }
+}
+
+class AssistantProfessor extends Employee {
+    double bp;
+
+    AssistantProfessor(String n, int id, String a, String m, String mob, double bp) {
+        super(n, id, a, m, mob);
+        this.bp = bp;
+    }
+
+    void paySlip() {
+        double da = bp * 0.97;
+        double hra = bp * 0.10;
+        double pf = bp * 0.12;
+        double fund = bp * 0.001;
+        double gross = bp + da + hra + pf + fund;
+        double net = gross - pf - fund;
+
+        System.out.println("\n***** ASSISTANT PROFESSOR PAYSLIP *****");
+        display();
+        System.out.println("Gross Salary = " + gross);
+        System.out.println("Net Salary = " + net);
+    }
+}
+
+class AssociateProfessor extends Employee {
+    double bp;
+
+    AssociateProfessor(String n, int id, String a, String m, String mob, double bp) {
+        super(n, id, a, m, mob);
+        this.bp = bp;
+    }
+
+    void paySlip() {
+        double da = bp * 0.97;
+        double hra = bp * 0.10;
+        double pf = bp * 0.12;
+        double fund = bp * 0.001;
+        double gross = bp + da + hra + pf + fund;
+        double net = gross - pf - fund;
+
+        System.out.println("\n***** ASSOCIATE PROFESSOR PAYSLIP *****");
+        display();
+        System.out.println("Gross Salary = " + gross);
+        System.out.println("Net Salary = " + net);
+    }
+}
+
+class Professor extends Employee {
+    double bp;
+
+    Professor(String n, int id, String a, String m, String mob, double bp) {
+        super(n, id, a, m, mob);
+        this.bp = bp;
+    }
+
+    void paySlip() {
+        double da = bp * 0.97;
+        double hra = bp * 0.10;
+        double pf = bp * 0.12;
+        double fund = bp * 0.001;
+        double gross = bp + da + hra + pf + fund;
+        double net = gross - pf - fund;
+
+        System.out.println("\n***** PROFESSOR PAYSLIP *****");
+        display();
+        System.out.println("Gross Salary = " + gross);
+        System.out.println("Net Salary = " + net);
+    }
+}
+
+public class EmployeePayslip {
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter Employee ID: ");
-        empId = sc.nextInt();
+        System.out.print("Enter Name of Employee: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter ID of Employee: ");
+        int id = sc.nextInt();
         sc.nextLine();
 
-        System.out.print("Enter Employee Name: ");
-        empName = sc.nextLine();
+        System.out.print("Enter Address of Employee: ");
+        String address = sc.nextLine();
 
-        System.out.print("Enter Basic Salary: ");
-        basicSalary = sc.nextDouble();
+        System.out.print("Enter Mail ID of Employee: ");
+        String mail = sc.nextLine();
+
+        System.out.print("Enter Mobile Number of Employee: ");
+        String mobile = sc.nextLine();
+
+        System.out.print("Enter Basic Pay: ");
+        double bp = sc.nextDouble();
+
+        System.out.println("1. Programmer");
+        System.out.println("2. Assistant Professor");
+        System.out.println("3. Associate Professor");
+        System.out.println("4. Professor");
+        System.out.print("Enter Designation: ");
+
+        int choice = sc.nextInt();
+
+        switch (choice) {
+            case 1:
+                new Programmer(name, id, address, mail, mobile, bp).paySlip();
+                break;
+            case 2:
+                new AssistantProfessor(name, id, address, mail, mobile, bp).paySlip();
+                break;
+            case 3:
+                new AssociateProfessor(name, id, address, mail, mobile, bp).paySlip();
+                break;
+            case 4:
+                new Professor(name, id, address, mail, mobile, bp).paySlip();
+                break;
+            default:
+                System.out.println("Invalid designation");
+        }
     }
 }
-class Salary extends Employee {
-    double DA, HRA, PF, grossSalary, netSalary;
 
-    void calculateSalary() {
-        DA = basicSalary * 0.40;
-        HRA = basicSalary * 0.20;
-        PF = basicSalary * 0.12;
+OUTPUT
 
-        grossSalary = basicSalary + DA + HRA;
-        netSalary = grossSalary - PF;
-    }
-    void display() {
-        System.out.println("\n----- Employee Details -----");
-        System.out.println("Employee ID   : " + empId);
-        System.out.println("Employee Name : " + empName);
-        System.out.println("Basic Salary  : " + basicSalary);
-        System.out.println("DA            : " + DA);
-        System.out.println("HRA           : " + HRA);
-        System.out.println("PF            : " + PF);
-        System.out.println("Gross Salary  : " + grossSalary);
-        System.out.println("Net Salary    : " + netSalary);
-    }
-}
-public class EmployeeMain {
-    public static void main(String[] args) {
-        Salary s = new Salary();
-        s.getEmployeeDetails();
-        s.calculateSalary();
-        s.display();
-    }
-}
+Enter Name of Employee: Raj
+Enter ID of Employee: 327
+Enter Address of Employee: Villupuram
+Enter Mail ID of Employee: raj@gmail.com
+Enter Mobile Number of Employee: 9994191599
+Enter Basic Pay: 15000
+1. Programmer
+2. Assistant Professor
+3. Associate Professor
+4. Professor
+Enter Designation: 2
 
-Output :
-Enter Employee ID: 101
-Enter Employee Name: buvana
-Enter Basic Salary: 30000
------ Employee Details -----
-Employee ID   : 101
-Employee Name : buvana
-Basic Salary  : 30000.0
-DA            : 12000.0
-HRA           : 6000.0
-PF            : 3600.0
-Gross Salary  : 48000.0
-Net Salary    : 44400.0
+***** ASSISTANT PROFESSOR PAYSLIP *****
+Employee Name: Raj
+Employee ID: 327
+Address: Villupuram
+Mobile Number: 9994191599
+Gross Salary = 32865.0
+Net Salary = 31050.0
